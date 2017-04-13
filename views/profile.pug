@@ -58,19 +58,20 @@ block content
           name='phone'
           placeholder='555-555-5555'
         )
-        #likes
-        h5 Likes
-        each like in likes
-          .like-container
-            ul
-              li
-                label#like= like.name
-                  input#inlineCheckbox1(
-                    type='checkbox'
-                    name='like'
-                    value=like.name
-                    selected=(body.likes && body.likes.includes(like.name))
-                  )
+        .container.row
+          #likes
+          h5 Likes
+          each like in likes
+            .like-container.container.col-md-4
+              ul
+                li
+                  label#like= like.name
+                    input#inlineCheckbox1(
+                      type='checkbox'
+                      name='like'
+                      value=like.name
+                      selected=(body.likes && body.likes.includes(like.name))
+                    )
         #dislikes
         h5 Dislikes
         each dislike in dislikes
