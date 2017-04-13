@@ -61,13 +61,16 @@ block content
         #likes
         h5 Likes
         each like in likes
-          label#like= like.name
-            input#inlineCheckbox1(
-              type='checkbox'
-              name='like'
-              value=like.name
-              selected=(body.likes && body.likes.includes(like.name))
-            )
+          .like-container
+            ul
+              li
+                label#like= like.name
+                  input#inlineCheckbox1(
+                    type='checkbox'
+                    name='like'
+                    value=like.name
+                    selected=(body.likes && body.likes.includes(like.name))
+                  )
         #dislikes
         h5 Dislikes
         each dislike in dislikes
